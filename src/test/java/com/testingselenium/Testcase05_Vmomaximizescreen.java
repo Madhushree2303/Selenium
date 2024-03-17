@@ -1,4 +1,4 @@
-package com.testingselenium.Testcase05_app;
+package com.testingselenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
-public class Vmomaximizescreen {
+public class Testcase05_Vmomaximizescreen {
 
     @Test
     public void maximizeAppVmo(){
