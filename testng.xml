@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/LENOVO T480/IdeaProjects/Selenium/src/test/java/com/testingselenium/Testcase10_vmoAppLoginAndPrintHomePage.java">
+        <classes>
+            <class name="com.testingselenium.Testcase10_vmoAppLoginAndPrintHomePage">
+                <methods>
+                    <include name="navigateToVmoApp"/>
+                    <include name="enterLogindetails"/>
+                    <include name="verifyHomepage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

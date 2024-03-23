@@ -10,8 +10,6 @@ import org.testng.annotations.Test;
 
 public class Testcase09_logOutSwagLapApp {
 
-
-
     @Test
     public void logOutApp() throws InterruptedException {
 
@@ -39,8 +37,6 @@ public class Testcase09_logOutSwagLapApp {
         jse.executeScript("arguments[0].click();", logout_button);
 
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/");
-
-
 
     }
 }
