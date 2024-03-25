@@ -7,17 +7,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class CURA_HealthCare_App {
-    ChromeOptions chromeOptions;
+
     WebDriver driver;
 
     @BeforeTest
     public void openBrowser(){
-        chromeOptions=new ChromeOptions();
+        ChromeOptions chromeOptions =new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
         driver=new ChromeDriver(chromeOptions);
 
@@ -82,7 +83,7 @@ public class CURA_HealthCare_App {
 
     }
 
-    @BeforeTest
+    @AfterTest
     public void close_Browser(){
         driver.quit();
     }
