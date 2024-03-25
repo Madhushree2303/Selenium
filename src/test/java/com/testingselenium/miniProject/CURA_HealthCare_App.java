@@ -18,9 +18,9 @@ public class CURA_HealthCare_App {
 
     @BeforeTest
     public void openBrowser(){
-        ChromeOptions chromeOptions =new ChromeOptions();
-        chromeOptions.addArguments("--start-maximized");
-        driver=new ChromeDriver(chromeOptions);
+
+        driver=new ChromeDriver();
+        driver.manage().window().maximize();
 
     }
     @Test(priority = 0)
