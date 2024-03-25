@@ -51,10 +51,25 @@ public class CURA_HealthCare_App {
 
         WebElement none_Options=driver.findElement(By.cssSelector("input#radio_program_none"));
         none_Options.click();
+
+        WebElement vist_DateElement=driver.findElement(By.cssSelector("input#txt_visit_date"));
+        vist_DateElement.sendKeys("27/03/2024");
+
+        WebElement comment_Element=driver.findElement(By.cssSelector("textarea#txt_comment"));
+        comment_Element.sendKeys("Make new appointment for Seoul CURA Healthcare Center Facility with doctor Mr.Jone");
+
+        WebElement book_ButtonElement=driver.findElement(By.cssSelector("button#btn-book-appointment"));
+        book_ButtonElement.click();
+
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+
+        System.out.println(driver.findElement(By.cssSelector("div.col-xs-12>h2")).getText());
+        Assert.assertEquals(driver.findElement(By.cssSelector("div.col-xs-12>h2")).getText(),"Appointment Confirmation");
+
     }
 
     @BeforeTest
     public void close_Browser(){
-        driver.quit();
+        //driver.quit();
     }
 }

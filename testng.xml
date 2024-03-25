@@ -2,13 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="C:/Users/LENOVO T480/IdeaProjects/Selenium/src/test/java/com/testingselenium/Testcase10_vmoAppLoginAndPrintHomePage.java">
+          name="CURA_HealthCare_App.java">
         <classes>
-            <class name="com.testingselenium.basicSelenium.Testcase10_vmoAppLoginAndPrintHomePage">
+            <class name="com.testingselenium.miniProject.CURA_HealthCare_App">
                 <methods>
-                    <include name="navigateToVmoApp"/>
-                    <include name="enterLogindetails"/>
-                    <include name="verifyHomepage"/>
+                    <include name="openApp"/>
+                    <include name="enterLoginDetails"/>
+                    <include name="make_Appointment"/>
                 </methods>
             </class>
         </classes>
