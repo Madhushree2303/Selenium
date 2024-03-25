@@ -20,14 +20,28 @@ public class CURA_HealthCare_App {
         chromeOptions=new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
         driver=new ChromeDriver(chromeOptions);
+
     }
     @Test(priority = 0)
-    public void openApp(){
+    public void openAppAndVerifyTitle(){
         driver.get("https://katalon-demo-cura.herokuapp.com/");
-        WebElement makeApp_Button=driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
-        makeApp_Button.click();
+        String title=driver.getTitle();
+        Assert.assertEquals(title,"CURA Healthcare Service");
     }
+
     @Test(priority = 1)
+    public void verifyMakeAppointmentButtonAvailable(){
+
+        WebElement makeApp_Button=driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
+        if (makeApp_Button.isDisplayed()){
+            makeApp_Button.click();
+            System.out.println("MakeAppointment is displayed");
+        }else {
+            System.out.println("MakeAppointment button not displayed");
+        }
+
+    }
+    @Test(priority = 2)
     public void enterLoginDetails(){
         WebElement login_TextBox=driver.findElement(By.cssSelector("input#txt-username"));
         login_TextBox.sendKeys("John Doe");
@@ -39,10 +53,10 @@ public class CURA_HealthCare_App {
         login_button.click();
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Assert.assertEquals(driver.getTitle(),"CURA Healthcare Service");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://katalon-demo-cura.herokuapp.com/#appointment");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void make_Appointment(){
         WebElement facility_dropdown=driver.findElement(By.cssSelector("select#combo_facility"));
         Select select=new Select(facility_dropdown);
@@ -70,6 +84,6 @@ public class CURA_HealthCare_App {
 
     @BeforeTest
     public void close_Browser(){
-        //driver.quit();
+        driver.quit();
     }
 }
